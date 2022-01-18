@@ -3,11 +3,10 @@ import {apikey} from "./apikey.js";
 // with an apikey from https://openweathermap.org/
 
 import { store } from "../app/store.js";
-import {setWeather} from '../features/main/mainSlice.js'
+import {setWeather, setFetched} from '../features/main/mainSlice.js'
 
 
 const query = store.getState().input.query;
-const remoteUrl = `api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apikey}`
 
 export const Weather = {
     getWeather(query) {
@@ -22,8 +21,9 @@ export const Weather = {
         }, networkError => {
             console.log(networkError.message);
         }).then(jsonResponse => {
-            store.dispatch(setWeather(jsonResponse)); 
-            console.log("response recieved")
+            store.dispatch(setWeather(jsonResponse));
+            store.dispatch(setFetched(true));
+            console.log("response recieved");
             console.log(jsonResponse);
         });
 

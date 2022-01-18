@@ -9,10 +9,18 @@ export const setQuery = (string) => {
     }
 }
 
+export const setUnit = (unit) => {
+    return {
+        type: 'input/setUnit',
+        payload: unit
+    }
+}
+
 // reducer - initialState
 
 const initialState = {
-    query: 'London, UK'
+    query: 'London, UK',
+    unit: "C"
 }
 
 // reducer with switch, or toolkit createSlice with options
@@ -24,6 +32,9 @@ const options = {
         setQuery: (state, action) => {
             state.query = action.payload
         },
+        setUnit: (state, action) => {
+            state.unit = action.payload
+        }
     }
 }
 

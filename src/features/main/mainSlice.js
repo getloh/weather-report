@@ -12,12 +12,24 @@ export const setWeather = (json) => {
         type: 'main/setWeather',
         payload: json
     }
-}
+};
+
+export const setFetched = (bool) => {
+    return {
+        type: 'main/setFetched',
+        payload: bool
+    }
+};
+
+
 
 // reducer - initialState
 
 const initialState = {
-    weather: {}
+    weather: {},
+    fetched: false,
+
+    
 }
 
 // reducer with switch, or toolkit createSlice with options
@@ -29,6 +41,10 @@ const options = {
         setWeather: (state, action) => {
             state.weather = action.payload
         },
+        setFetched: (state, action) => {
+            state.fetched = action.payload
+        },
+        
     }
 }
 

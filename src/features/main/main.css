@@ -1,0 +1,40 @@
+/* div, header, footer, section, nav {
+    border: 1px solid rgb(90, 15, 15);
+} */
+
+.main-head{
+    border-radius: 20px;
+    background-color: rgba(183, 235, 222, 0.377);
+
+}
+.main-head h1{
+    font-size: 40px;
+    margin-top: -20px;
+}
+.main-head p{
+    padding-top: 10px;
+
+}
+
+.main-body{
+    border-radius: 20px;
+    background-color: rgba(164, 217, 219, 0.377);
+    display: flex;
+    justify-content: space-between;
+}
+
+.temp-main{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.678);
+    font-size: 30px;
+}
+
+.lower-body{
+    border-radius: 20px;
+    background-color: rgba(155, 190, 201, 0.377);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+}

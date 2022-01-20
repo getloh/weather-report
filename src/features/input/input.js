@@ -7,31 +7,24 @@ import search from '../../img/search.png'
 export const Input = () => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
-    const searchBar = document.getElementById("searchBox");
-
     
-    const handleInput = (event) => {
+    const handleInput = (event) => {                // handles input for the search box and sets state.input.query
         dispatch(setQuery(event.target.value))
     }
 
     const handleFetch = (event) => {
-        // dispatch the fetch to API via thunk
-        Weather.getWeather(state.input.query);
-        document.getElementById("searchBox").style.animation = "slide 1s ease forwards";
+        Weather.getWeather(state.input.query);      // accesses API
+        document.getElementById("searchBox").style.animation = "slide 1s ease forwards";  // Adds CSS property linking it to animation
     }
 
-    const handleChangeUnit = (event) => {
+    const handleChangeUnit = (event) => {           // Dispatches and sets state.input.unit
       let unitChange = "C";
       if (state.input.unit === "C"){
-        unitChange = "F";
-      }
+        unitChange = "F";      }
       else if (state.input.unit === "F"){
-        unitChange = "K";
-      }
+        unitChange = "K";       }
       else if (state.input.unit === "K"){
-        unitChange = "C";
-      }
-
+        unitChange = "C";      }
       dispatch(setUnit(unitChange))
     }
 

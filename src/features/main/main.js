@@ -1,6 +1,7 @@
 
 import { useDispatch, useSelector } from 'react-redux'
 import './main.css'
+import compass from '../../img/compass.png'
 
 export const Main = () => {
     // const dispatch = useDispatch();
@@ -25,11 +26,16 @@ export const Main = () => {
         }
     }
 
-    const convertUnixTime = (number) => {
+    const convertUnixTime = (number) => {   
         const ms = number * 1000;
         const dateObject = new Date(ms);
         const hrDate = dateObject.toLocaleString();
         return hrDate.slice(-8);
+    }
+
+    const rotate = () => {                  // Controls the rotation of the compass
+        const rotation = Number(wr.wind.deg) - 45
+        document.getElementById("compass").style.transform = `rotate(${rotation}deg)`
     }
 
     return (
@@ -40,7 +46,7 @@ export const Main = () => {
         </div>
 
         <div className="main-body">
-            <div className="temp-main">{convertTemp(wr.main.temp)}</div>
+            <div className="temp-main box">{convertTemp(wr.main.temp)}</div>
             
             <div className="temp-sub">
                 <ul>Feels like {convertTemp(wr.main.feels_like)}</ul>
@@ -48,16 +54,19 @@ export const Main = () => {
                 <ul>Lows of {convertTemp(wr.main.temp_min)}</ul>
             </div>
             
-            <div>
+            <div className="status">
                 <ul>{wr.weather[0].main}</ul>
                 <ul>{wr.weather[0].description}</ul>
             </div>
         </div>
         <br></br>
         <div className="lower-body">
-            <div>Humidity {wr.main.humidity}%</div>
-            <div>wind speed {wr.wind.speed}m/s in direction {wr.wind.deg}°</div>
-            <div>
+            <div className="humidity box">Humidity {wr.main.humidity}%</div>
+            <div className="wind">
+                <div className="wind-left">wind speed {wr.wind.speed}m/s <br></br>in direction {wr.wind.deg}°</div>
+                <div className="wind-right"> <img className="compass" id="compass" onLoad={rotate()} src={compass}/> </div>    
+            </div>
+            <div className="suntime box">
                 <ul>sunrise {convertUnixTime(wr.sys.sunrise)}</ul>
                 <ul>sunset {convertUnixTime(wr.sys.sunset)}</ul>
             </div>

@@ -3,10 +3,6 @@
   } */
 
 
-.search-wrap{
-    
-}
-
 .search-box{
     overflow: hidden;
     margin-top: 35%;
@@ -50,15 +46,10 @@
 
 }
 
-#slide{
-    animation: slide 3s ease forwards;
-}
-
 @keyframes slide{
     from {margin-top: 35%;
     }
     to {
         margin-top: 2%;
-        
     }
 }

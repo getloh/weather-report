@@ -35,8 +35,12 @@ export const Main = () => {
 
     const rotate = () => {                  // Controls the rotation of the compass
         const rotation = Number(wr.wind.deg) - 45
-        document.getElementById("compass").style.transform = `rotate(${rotation}deg)`
-    }
+        // 
+        setTimeout(function() {
+            //your code to be executed after 1 second
+            document.getElementById("compass").style.transform = `rotate(${rotation}deg)`
+          }, 100);
+    };
 
     return (
     <div>

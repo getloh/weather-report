@@ -39,7 +39,6 @@ export const Input = () => {
               
             </div>
           </div>
-
           {state.main.fetched === true ? <div className="unit-buttons">
             <button className="btn" onClick={handleChangeUnit}>°{state.input.unit}</button>
           </div> : null}

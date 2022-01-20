@@ -12,7 +12,7 @@ export const Input = () => {
         dispatch(setQuery(event.target.value))
     }
 
-    const handleFetch = (event) => {
+    const handleFetch = () => {
         Weather.getWeather(state.input.query);      // accesses API
         document.getElementById("searchBox").style.animation = "slide 1s ease forwards";  // Adds CSS property linking it to animation
     }
@@ -28,13 +28,20 @@ export const Input = () => {
       dispatch(setUnit(unitChange))
     }
 
+    const handleKeypress = e => {                   // Allows for using 'enter' on keyboard instead of mouseclick on button
+    if (e.keyCode === 13) {
+      handleFetch();
+    }
+
+  };
+
     return (
         <div>
           
 
           <div className="search-wrap" >
             <div className="search-box" id="searchBox" >
-              <input className="search" placeholder="London, UK" onChange={handleInput} type='text' />
+              <input className="search" placeholder="London, UK" onChange={handleInput} onKeyUp={handleKeypress} type='text' />
               <button className="button" onClick={handleFetch}><img className="searchimage" src={search}/></button>
               
             </div>

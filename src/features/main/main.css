@@ -65,3 +65,7 @@
 .box{
     padding: 10px;
 }
+
+.container{
+    min-width: 570px;
+}

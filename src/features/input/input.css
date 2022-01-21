@@ -3,9 +3,12 @@
   } */
 
 
+
 .search-box{
     overflow: hidden;
-    margin-top: 35%;
+    top:45%;
+    left: 30%;
+    position: absolute;
     margin-bottom: 10px;
     display: inline-block;
     height: 60px;
@@ -43,8 +46,13 @@
     border-radius: 25px;
     left: 7px;
     top: 5px;
-    
 }
+
+.unit-buttons{
+    position: relative;
+    left: 50%;
+}
+
 .searchimage{
     position: relative;
     height: 80%;
@@ -60,8 +68,6 @@
     position: absolute;
     z-index: -1;
     overflow: none;
-
-
 }
 .weather-status img{
     width: 80%;
@@ -76,9 +82,9 @@
 }
 
 @keyframes slide{
-    from {margin-top: 35%;
+    from {top: 45%;
     }
     to {
-        margin-top: 2%;
+        top: 2%;
     }
 }

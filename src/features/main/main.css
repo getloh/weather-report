@@ -1,10 +1,13 @@
 /* div, header, footer, section, nav {
     border: 1px solid rgb(90, 15, 15);
 } */
+.mainjs{
+    margin-top: 15%;
+}
 
 .main-head{
     border-radius: 20px;
-    background-color: rgba(183, 235, 222, 0.377);
+    background-color: rgba(254, 255, 255, 0.767);
 
 }
 .main-head h1{
@@ -22,6 +25,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 15vh;
     
 }
 
@@ -29,7 +33,15 @@
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.678);
     font-size: 30px;
-    
+    min-height: 15vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight:bold;
+}
+
+.temp-sub{
+    margin-left: 5vh;
 }
 
 .status{
@@ -61,6 +73,9 @@
     /* transform: rotate(-45deg) */
 }
 
+.weather-text{
+    font-weight: bold;
+}
 
 .box{
     padding: 10px;

@@ -48,7 +48,7 @@ export const Main = () => {
     }
 
     return (
-    <div>
+    <div className="mainjs">
         <div className="main-head container">
         <p>The current weather for </p>
         <h1>{state.main.weather.name}</h1>

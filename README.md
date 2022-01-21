@@ -54,7 +54,7 @@ Spent more time than i'd like to admit playing around with Js and CSS to try and
 Similarly there is some Js to select the correct picture for the forecast based on the information present in state from the API.
 
 ## Screenshots
-Let me clean things up a little more first...
+![https://gfycat.com/LimitedEnchantingBetafish](https://gfycat.com/LimitedEnchantingBetafish)
 
 ## Usage
 This project will not work without an API key, this data has been omitted from github for obvious reasons, You can sign up to https://openweathermap.org/ and get a free API key, then place into a file @ weather\src\api\apikey.js - "export const apikey = 'apiStringHere'" .

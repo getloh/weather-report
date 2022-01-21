@@ -32,7 +32,6 @@ export const Input = () => {
     if (e.keyCode === 13) {
       handleFetch();
     }
-
   };
 
     return (
